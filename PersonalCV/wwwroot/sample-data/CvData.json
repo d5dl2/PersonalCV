@@ -1,0 +1,138 @@
+{
+  "Page1Content": {
+    "SideBarContent": {
+      "PersonalInfoContent": {
+        "ImagePath": "/person.jpg",
+        "NameSurName": "Ahmet Burak",
+        "BirthDate": "1992-10-29",
+        "Nationality": "Turkish"
+      },
+      "ContactInfoContent": {
+        "Location": "Kocaeli, Turkey",
+        "Email": "burak_ahm@hotmail.com",
+        "Phone": "(+90) 538 935 36 27",
+        "LinkedInUrl": "https://www.linkedin.com/in/ahmet-burak-386369131",
+        "GithubUrl": "https://github.com/d5dl2"
+      }
+    },
+    "MainContent": {
+      "Motto": "Deleting unnecessary lines of code gives him more pleasure than adding new lines of code.",
+      "WaitingFor": [
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme"
+      ],
+      "Offer": [
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme",
+        "Deneme"
+      ]
+    }
+  },
+  "Page2Content": {
+    "SideBarContent": {
+      "SkillSetContent": {
+        "Skills": [
+          {
+            "Name": "C#",
+            "Rank": 4.5
+          },
+          {
+            "Name": "C++",
+            "Rank": 3.5
+          },
+          {
+            "Name": "MsSql",
+            "Rank": 4
+          },
+          {
+            "Name": "Microservice",
+            "Rank": 3.5
+          },
+          {
+            "Name": "K8S",
+            "Rank": 3.5
+          },
+          {
+            "Name": ".Net Core",
+            "Rank": 4
+          },
+          {
+            "Name": "Docker",
+            "Rank": 3
+          },
+          {
+            "Name": "WebMethods",
+            "Rank": 1.5
+          },
+          {
+            "Name": "MS BizTalk",
+            "Rank": 1.5
+          },
+          {
+            "Name": "DataPower Gateway",
+            "Rank": 1.5
+          }
+        ]
+      },
+      "Concepts": [
+        "SOLID",
+        "Design Patterns",
+        "OOP",
+        "Restful",
+        "Apm"
+      ],
+      "Hobbies": [
+        "Playing Online Games",
+        "Learning DirectX 9-11"
+      ]
+    },
+    "MainContent": {
+      "JobExperiences": [
+        {
+          "Name": "OBSS",
+          "StartDate": "2021-01-01",
+          "EndDate": null,
+          "ReferansContent": "Deniz Arman, Account Manager, denizarman@gmail.com",
+          "Projects": [
+            {
+              "Name": "Banking Consultancy",
+              "Experience": "He works as an architectural consultant in high-load public bank applications. He performs technical analysis studies to foresee possible problems caused by the increased load and to prevent them before they happen. Tasks he is actively working on are system diagnosis, performance improvements, technology modernization and microservice transformation."
+            }
+          ]
+        },
+        {
+          "Name": "MTM Security Solutions",
+          "StartDate": "2019-01-01",
+          "EndDate": "2020-12-01",
+          "ReferansContent": "M. Melikşah Bardakçı,Team Lead, (+90) 533 206 25 97",
+          "Projects": [
+            {
+              "Name": "Proje1",
+              "Experience": "He takes part in the design and development of projects using Dependency Injection technique, SOLID principles and N-layerarchitecture in .Net Core environment. While experiencing the Code First approach, the use of Data Annotation and Fluent Api with the Entitiy Framework Core, he has also experienced in PL/SQL especially using Stored Procedures and Functions. Also 3rd party libraries are used such as BouncyCastle, MVVMLight, DevExpress, OpenCVSharp, Basler Pylon, Tesseract, Log4Net. Experience has been gained with Jiraand Scrum. Contribution is provided to teamwork by developing the architectures of real time security projects where he had the opportunity to work with industrial cameras."
+            }
+          ]
+        },
+        {
+          "Name": "İş Yeri 3",
+          "StartDate": "2014-10-01",
+          "EndDate": "2018-12-01",
+          "ReferansContent": "Muhammet Sabur Beratoğlu, CEO, beratoglu@gmail.com",
+          "Projects": [
+            {
+              "Name": "Proje1",
+              "Experience": "In .Net environment; he has got back-end tasks in form, wpf and windows service applications, WCF integrations and web applications. He used Thread, Task, ConcurrentQueue, EventWaitHandle, DllImport, PerformanceCounter classes, Delegate and event definitions, TCP/ IP, HTTP, FTP communication protocols, EntityFramework library, T-SQL and Stored Procedure technologies on MySQL and MS SQL servers. He gained experience in BitBucket, SourceTree and Git applications. He had the opportunity to use libraries such as Log4Net, NewtonSoft, OpenCV and OpenCVSharp, DLib, DevExpress, ImageEn. In .Net environment; he has got back-end tasks in form, wpf and windows service applications, WCF integrations and web applications. He used Thread, Task, ConcurrentQueue, EventWaitHandle, DllImport, PerformanceCounter classes, Delegate and event definitions, TCP/ IP, HTTP, FTP communication protocols, EntityFramework library, T-SQL and Stored Procedure technologies on MySQL and MS SQL servers. He gained experience in BitBucket, SourceTree and Git applications. He had the opportunity to use libraries such as Log4Net, NewtonSoft, OpenCV and OpenCVSharp, DLib, DevExpress, ImageEn."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

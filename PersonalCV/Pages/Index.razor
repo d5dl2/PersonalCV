@@ -1,99 +1,195 @@
 ﻿@page "/"
-<page size="A4">
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-4" style="background-color: rgb(0, 75 , 128)">
-                <div class="card bg-transparent mt-5 border-0">
-                    <div class="container">
-                        <img src="/person.jpg" class="card-img-top img-thumbnail rounded-circle" alt="cv image" />
-                    </div>
-                    <div class="card-body p-0">
-                        <div class="text-light mt-4">
-                            <p class="row text-center">
-                                <span class="fw-bold fs-4">Ahmet Burak</span>
-                            </p>
+@using PersonalCV.Models;
+@inject HttpClient Http
 
-                            <span class="fw-bold">Date of birth:</span> <span>29/10/1992</span>
-                            <span class="fw-bold">Nationality:</span> <span> Turkish </span>
+@if (data != null)
+{
+    <div class="pageA4 row">
+        <div id="page1sidebar" class="col-4 leftbar">
+            @{
+                var personalInfo = data.Page1Content.SideBarContent.PersonalInfoContent;
+                var contactInfo = data.Page1Content.SideBarContent.ContactInfoContent;
+            }
+            <div class="card bg-transparent mt-5 border-0">
+                <img src="@personalInfo.ImagePath" class="w-75 mx-auto card-img-top img-fluid img-thumbnail rounded-circle" alt="cv image" />
+                <div class="card-body p-0">
+                    <div class="text-light mt-4">
+                        <p class="row text-center">
+                            <span class="fw-bold fs-4">@personalInfo.NameSurName</span>
+                        </p>
 
-                            <div class="d-grid gap-2 mt-4">
+                        <span class="fw-bold">Date of birth:</span> <span>@personalInfo.BirthDate.ToString("dd/MM/yyyy")</span>
+                        @*<span class="fw-bold">Nationality:</span> <span> Turkish </span>*@
 
-                                <span class="fw-bold">CONTACT</span>
+                        <div class="d-grid gap-2 mt-4">
 
-                                <div class="row">
-                                    <i class="col-1 bi bi-geo-alt" />
-                                    <span class="col">Kocaeli, Turkey</span>
-                                </div>
-                                <div class="row">
-                                    <i class="col-1 bi bi-envelope" />
-                                    <span class="col">burak_ahm@hotmail.com</span>
-                                </div>
-                                <div class="row">
-                                    <i class="col-1 bi bi-telephone" />
-                                    <span class="col">(+90) 538 935 36 27</span>
-                                </div>
-                                <div class="row">
-                                    <i class="col-1 bi bi-linkedin" />
-                                    <a class="col text-light text-break" target="_blank" href="https://www.linkedin.com/in/ahmet-burak-386369131">https://www.linkedin.com/in/ahmet-burak-386369131</a>
-                                </div>
-                                <div class="row">
-                                    <i class="col-1 bi bi-github" />
-                                    <a class="col text-light text-break" target="_blank" href="https://github.com/d5dl2">https://github.com/d5dl2</a>
-                                </div>
+                            <span class="fw-bold">CONTACT</span>
+
+                            <div class="row">
+                                <i class="col-1 bi bi-geo-alt" />
+                                <span class="col">@contactInfo.Location</span>
+                            </div>
+                            <div class="row">
+                                <i class="col-1 bi bi-envelope" />
+                                <span class="col">@contactInfo.Email</span>
+                            </div>
+                            <div class="row">
+                                <i class="col-1 bi bi-telephone" />
+                                <span class="col">@contactInfo.Phone</span>
+                            </div>
+                            <div class="row">
+                                <i class="col-1 bi bi-linkedin" />
+                                <a class="col text-light text-break" target="_blank" href="@contactInfo.LinkedInUrl">@contactInfo.LinkedInUrl</a>
+                            </div>
+                            <div class="row">
+                                <i class="col-1 bi bi-github" />
+                                <a class="col text-light text-break" target="_blank" href="@contactInfo.GithubUrl">@contactInfo.GithubUrl</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-8 bg-white">
-                <div class="card mt-5 bg-light">
-                    <div class="card-body">
-                        He has major experience in developing desktop/web applications on .Net
-                        and .Net Core platforms.  He dreams of
-                        developing professional desktop/web technologies and libraries.
-                    </div>                    
+        </div>
+        <div id="page1main" class="col-8 bg-white">
+            @{
+                var offerList = data.Page1Content.MainContent.Offer;
+                var waitingForList = data.Page1Content.MainContent.WaitingFor;
+                var motto = data.Page1Content.MainContent.Motto;
+            }
+            <div class="card mt-3 bg-light">
+                <div class="card-body">
+                    @motto
                 </div>
-                <div class="card bg-light mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title" >What I'm Looking For ?</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                    </ul>
+            </div>
+            <div class="card bg-light mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">What I'm Looking For ?</h5>
                 </div>
-                <div class="card bg-light mt-3">
-                    <div class="card-body">
-                        <h5 class="card-title">What I Offer ?</h5>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                        <li class="list-group-item">Deneme</li>
-                    </ul>
+                <ul class="list-group list-group-flush">
+                    @foreach (var item in waitingForList)
+                    {
+                        <li class="list-group-item">@item</li>
+                    }
+                </ul>
+            </div>
+            <div class="card bg-light mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">What I Offer ?</h5>
                 </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var item in offerList)
+                    {
+                        <li class="list-group-item">@item</li>
+                    }
+                </ul>
             </div>
         </div>
     </div>
-</page>
-<page size="A4">
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-4" style="background-color: rgb(0, 75 , 128)">
+    <div class="pageA4 row">
+        <div id="page2sidebar" class="col-4 leftbar">
+            @{
+                var skillSet = data.Page2Content.SideBarContent.SkillSetContent.Skills;
+                var concepts = data.Page2Content.SideBarContent.Concepts;
+                var hobbies = data.Page2Content.SideBarContent.Hobbies;
+            }
+            <div class="card bg-transparent mt-5 border-0 text-light">
+                <div class="card-body text-center">
+                    Skill Set
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var skill in skillSet.OrderByDescending(x => x.Rank))
+                    {
+                        <li class="list-group-item bg-transparent text-light d-flex justify-content-between">
+                            <span>@skill.Name</span>
+                            <div class="col-6">
+                                @{
+                                    int i = 1;
+                                    for (; i <= skill.Rank; i++)
+                                    {
+                                        <i class="bi bi-star-fill" />
+                                    }
+                                    if (skill.Rank > (int)skill.Rank)
+                                    {
+                                        <i class="bi bi-star-half" />
+                                    }
+                                }
+                            </div>
+                        </li>
+                    }
+
+                </ul>
             </div>
-            <div class="col-8 bg-white">
+            <hr class="bg-white border-2 border-top border-white">
+            <div class="card bg-transparent border-0 text-light">
+                <div class="card-body text-center">
+                    Concepts
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var concept in concepts)
+                    {
+                        <li class="list-group-item bg-transparent text-light">
+                            @concept
+                        </li>
+                    }
+                </ul>
+            </div>
+            <hr class="bg-white border-2 border-top border-white">
+            <div class="card bg-transparent border-0 text-light">
+                <div class="card-body text-center">
+                    Hobbies
+                </div>
+                <ul class="list-group list-group-flush">
+                    @foreach (var hobby in hobbies)
+                    {
+                        <li class="list-group-item bg-transparent text-light">
+                            @hobby
+                        </li>
+                    }
+                </ul>
             </div>
         </div>
+        <div id="page2main" class="col-8 bg-white">
+            @{
+                var jobs = data.Page2Content.MainContent.JobExperiences;
+            }
+            @foreach (var job in jobs)
+            {
+                <div class="card bg-light mt-3">
+                    <h4 class="card-header">
+                        <span>
+                            @job.Name
+                        </span>
+                        <span class="fs-6 fst-italic">
+                            @{
+                                var startDate = job.StartDate.ToString("MMM yyyy");
+                                var endDate = job.EndDate?.ToString("MMM yyyy") ?? "CURRENT";
+                            }
+                            (@startDate - @endDate)
+                        </span>
+                    </h4>
+                    <div class="card-body">
+                        @foreach (var item in job.Projects)
+                        {
+                            <h5 class="card-title">@item.Name</h5>
+                            <p>
+                                @item.Experience
+                            </p>
+                        }
+                    </div>
+                    <div class="card-footer fst-italic">
+                        <span class="fw-bold">Ref</span> @job.ReferansContent
+                    </div>
+                </div>
+            }
+        </div>
     </div>
-</page>
+}
+
+@code {
+    private CVContainer? data;
+
+    protected override async Task OnInitializedAsync()
+    {
+        data = await Http.GetFromJsonAsync<CVContainer>("sample-data/CvData.json");
+    }
+}
